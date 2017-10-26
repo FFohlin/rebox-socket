@@ -1,8 +1,8 @@
-var app = require('express')();
-var bodyParser  = require('body-parser');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-let portNumber = 3001;
+const app = require('express')();
+const bodyParser  = require('body-parser');
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+const portNumber = 3001;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
