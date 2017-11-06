@@ -2,8 +2,8 @@ const app = require('express')();
 const bodyParser  = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const ipaddress = '0.0.0.0'; //process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-const portNumber = 8080; //process.env.OPENSHIFT_NODEJS_PORT || 3001;
+const ipaddress = process.env.OPENSHIFT_IP || "127.0.0.1";
+const portNumber = process.env.OPENSHIFT_PORT || 3001;
 
 //const portNumber = 3001;
 
