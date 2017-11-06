@@ -40,6 +40,6 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(portNumber, server_ip_address, function(){
+http.listen(portNumber, ipaddress, function(){
   console.log('listening on ' + server_ip_address + ':' + portNumber);
 });
