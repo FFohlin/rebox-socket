@@ -24,7 +24,7 @@
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
         $(function () {
-            var socket = io();
+            var socket = io('http://socket-auktion.1d35.starter-us-east-1.openshiftapps.com');
             $('form').submit(function(){
                 socket.emit('public data changes', $('#m').val());
                 $('#m').val('');
