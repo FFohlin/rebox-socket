@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "listen to socket messages",
   "scripts": {
-    "start": "node start.js"
+    "start": "node ./start.js"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
