@@ -2,8 +2,8 @@ const app = require('express')();
 const bodyParser  = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-//var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-const portNumber = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+const ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+const portNumber = process.env.OPENSHIFT_NODEJS_PORT || 3001;
 
 //const portNumber = 3001;
 
@@ -40,6 +40,6 @@ io.on('connection', function(socket){
   });
 });
 
-http.listen(portNumber, function(){
-  console.log('listening on *:' + portNumber);
+http.listen(portNumber, server_ip_address, function(){
+  console.log('listening on ' + server_ip_address + ':' + portNumber);
 });
