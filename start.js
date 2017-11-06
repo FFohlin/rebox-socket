@@ -2,7 +2,10 @@ const app = require('express')();
 const bodyParser  = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const portNumber = 3001;
+//var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+const portNumber = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+
+//const portNumber = 3001;
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
@@ -38,5 +41,5 @@ io.on('connection', function(socket){
 });
 
 http.listen(portNumber, function(){
-  console.log('listening on *:3001');
+  console.log('listening on *:' + portNumber);
 });
