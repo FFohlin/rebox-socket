@@ -2,7 +2,7 @@ const app = require('express')();
 const bodyParser  = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const ipaddress = process.env.IP || process.env.OPENSHIFT_IP || null;
+const ipaddress = process.env.OPENSHIFT_IP || null;
 const portNumber = process.env.PORT || process.env.OPENSHIFT_PORT || 3001;
 
 //const portNumber = 3001;
